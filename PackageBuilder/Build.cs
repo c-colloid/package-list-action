@@ -72,7 +72,8 @@ namespace VRC.PackageManagement.Automation
         string PackageListingSuffix = "Listing";
         
         AbsolutePath PackageListingSourcePath => PackageListingSourceFolder / PackageListingSourceFilename;
-        AbsolutePath WebPageSourcePath => PackageListingSourceFolder / "Website";
+        string WebsiteFolderName => Environment.GetEnvironmentVariable("WEBSITE_FOLDER_NAME") ?? "Website";
+        AbsolutePath WebPageSourcePath => PackageListingSourceFolder / WebsiteFolderName;
 
         #region Methods wrapped for GitHub / Local Parity
 
